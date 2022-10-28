@@ -19,15 +19,18 @@ class Usuario {
         return this.mascotas.length;
     }
 
-    addBook(nuevoLibro) {
-        this.libros.push()
+    addBook(nombreLibro, autorLibro) {
+        let nuevoLibro = [];
+        nuevoLibro.push(nombreLibro);
+        nuevoLibro.push(autorLibro);
+        this.libros.push(nuevoLibro);
         return this.libros;
     }
 
     getBookNames() {
-        nombresLibros = [];
+        let nombresLibros = [];
 
-        for (i = 0, i < this.libros.length, i++) {
+        for (let i = 0; i < this.libros.length; i++) {
             nombresLibros.push(this.libros[i][0]);
         }
         return nombresLibros;
@@ -35,9 +38,11 @@ class Usuario {
 }
 
 
-const Leo = new Usuario("Leonardo", "Mayaute", [{ nombre: "Diario", autor: "Ana Frank" }, { nombre: "La amigdalitis de Tarzan", autor: "Alfredo Bryce Echinique" }], ["gato", "conejo"]);
+const leo = new Usuario("Leonardo", "Mayaute", [{ nombre: "Diario", autor: "Ana Frank" }, { nombre: "La amigdalitis de Tarzan", autor: "Alfredo Bryce Echinique" }], ["gato", "conejo"]);
 
 
-console.log(Leo.getFullName());
-console.log(Leo.addMascota("perro"));
-console.log(Leo.countMascotas());
+console.log(leo.getFullName());
+console.log(leo.addMascota("perro"));
+console.log(leo.countMascotas());
+console.log(leo.addBook("Madame Bovary", "Gustave Flaubert"));
+console.log(leo.getBookNames());
